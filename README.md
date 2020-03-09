@@ -63,3 +63,5 @@ Then navigate to `roman_add/roman_add/tests/` and run:
 ```bash
 pytest
 ```
+
+This will run all unit tests in sequence, and finally functional tests.
