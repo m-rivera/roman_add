@@ -1,2 +1,4 @@
 **/*.swp
 **/*.pyc
+roman_add.egg-info/*
+.pytest_cache/*
