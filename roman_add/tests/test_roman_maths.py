@@ -1,8 +1,15 @@
 """Unit tests for converting between Toman and Arabic numerals."""
+import pytest
+import roman_add.src.roman_maths as rm
 
 # sample numbers
 num_equiv = (('I',1),
             ('IV',4),
             ('XIX',19),
-            ('CMXCIX',999)
+            ('CMXCIX',999),
             ('MMMCCX',3210))
+
+@pytest.mark.parametrize("rom,ara", num_equiv)
+def test_ara_to_rom(rom,ara):
+    calc_rom = rm.ara_to_rom(ara)
+    assert calc_rom == rom
