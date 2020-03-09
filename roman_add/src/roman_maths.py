@@ -30,6 +30,7 @@ conv_chart = (('M', 1000),
 # still need a dictionary for easier lookup
 dic_conv_chart = dict(conv_chart)
 
+
 def ara_to_rom(ara_in):
     """
     Convert an Arabic number to its Roman equivalent.
@@ -60,6 +61,7 @@ def ara_to_rom(ara_in):
             ara_in -= count * entry[1]
     return rom_out
 
+
 def rom_to_ara(rom_in):
     """
     Convert a Roman number to its Arabic equivalent.
@@ -83,9 +85,9 @@ def rom_to_ara(rom_in):
     ara_out = 0
 
     # cycle through all characters except the last one
-    for i,char in enumerate(rom_in[:-1]):
+    for i, char in enumerate(rom_in[:-1]):
         current_num = dic_conv_chart[char]
-        next_num = dic_conv_chart[rom_in[i+1]]
+        next_num = dic_conv_chart[rom_in[i + 1]]
         # if the following number is larger than the current, subtract current
         if current_num < next_num:
             ara_out -= current_num
@@ -101,6 +103,7 @@ def rom_to_ara(rom_in):
         raise ValueError("Non-standard character order in: " + rom_in)
 
     return ara_out
+
 
 def rom_add(rom_in_a, rom_in_b):
     """
