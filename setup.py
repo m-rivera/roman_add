@@ -10,5 +10,5 @@ setup(name='roman_add',
       packages=['roman_add',
                 'roman_add.src',
                 'roman_add.scripts'],
-      scripts=['roman_add/scripts/roman_add.py'],
+      scripts=['roman_add/scripts/add_roman.py'],
       )
