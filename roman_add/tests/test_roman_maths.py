@@ -32,3 +32,10 @@ def test_rom_to_ara_wrong_order():
     with pytest.raises(ValueError) as e_info:
         rm.rom_to_ara("IIX")
     assert "Non-standard character order" in str(e_info.value)
+
+def test_add_rom():
+    """Test adding Roman numerals together"""
+    # 19 + 36 = 55
+    sum_rom = rm.rom_add('XIX', 'XXXVI')
+
+    assert sum_rom == 'LV'
