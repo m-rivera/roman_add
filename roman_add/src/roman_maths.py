@@ -101,3 +101,29 @@ def rom_to_ara(rom_in):
         raise ValueError("Non-standard character order in: " + rom_in)
 
     return ara_out
+
+def rom_add(rom_in_a, rom_in_b):
+    """
+    Add two Roman numerals together and return the sum in Roman numerals
+
+    Parameters
+    ----------
+    rom_in_a, rom_in_b : str
+        Input Roman numerals in all capitals and in subtractive style e.g.
+        'IV'->4 or 'CMXCIX'->999
+    Returns
+    -------
+    rom_out_sum : str
+        The Roman numeral of the sum of the two input Roman numerals
+
+    """
+    # convert to Arabic numerals
+    ara_in_a = rom_to_ara(rom_in_a)
+    ara_in_b = rom_to_ara(rom_in_b)
+
+    ara_sum = ara_in_a + ara_in_b
+
+    # convert back to Roman
+    rom_out_sum = ara_to_rom(ara_sum)
+
+    return rom_out_sum
