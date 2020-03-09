@@ -15,15 +15,20 @@ def test_ara_to_rom(rom,ara):
     calc_rom = rm.ara_to_rom(ara)
     assert calc_rom == rom
 
+@pytest.mark.parametrize("rom,ara", num_equiv)
+def test_rom_to_ara(rom,ara):
+    """Test Roman -> Arabic"""
+    calc_ara = rm.rom_to_ara(rom)
+    assert calc_ara == ara
+
 def test_rom_to_ara_wrong_char():
     """Test exception catch for non-Roman character input"""
     with pytest.raises(ValueError) as e_info:
         rm.rom_to_ara("Not Roman letters")
     assert "Non-Roman characters" in str(e_info.value)
 
-
-@pytest.mark.parametrize("rom,ara", num_equiv)
-def test_rom_to_ara(rom,ara):
-    """Test Roman -> Arabic"""
-    calc_ara = rm.rom_to_ara(rom)
-    assert calc_ara == ara
+def test_rom_to_ara_wrong_order():
+    """Test exception catch for non-standard character order"""
+    with pytest.raises(ValueError) as e_info:
+        rm.rom_to_ara("IIX")
+    assert "Non-standard character order" in str(e_info.value)
