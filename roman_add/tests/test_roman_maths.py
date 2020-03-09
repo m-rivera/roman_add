@@ -1,7 +1,7 @@
 """Unit tests for converting between Toman and Arabic numerals."""
 import pytest
+import subprocess
 import roman_add.src.roman_maths as rm
-
 # sample numbers and their equivalents
 num_equiv = (('I',1),
             ('IV',4),
@@ -44,3 +44,11 @@ def test_add_rom(rom_a, rom_b, rom_ab):
     """Test adding Roman numerals together"""
     sum_rom = rm.rom_add(rom_a, rom_b)
     assert sum_rom == rom_ab
+
+@pytest.mark.parametrize("rom_a,rom_b,rom_ab", sums)
+def test_functional(capfd, rom_a, rom_b, rom_ab):
+    """Test the program from end to end"""
+    proc = subprocess.Popen('add_roman.py ' + rom_a + ' ' + rom_b, shell=True)
+    proc.wait()
+    result = capfd.readouterr().out.rstrip()
+    assert result == rom_ab
