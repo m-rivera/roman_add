@@ -68,3 +68,5 @@ pytest
 ```
 
 This will run all unit tests in sequence, and finally functional tests.
+
+Linting was performed with Pyflakes.
