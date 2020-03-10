@@ -17,8 +17,10 @@ if __name__ == '__main__':
     # parse the user input
     parser = argparse.ArgumentParser(description="Add two Roman numerals\
     together.", epilog="The numbers must be positive, in all capitals, and in\
-    the substractive Roman style (e.g. 4 is expressed IV instead of IIII). An\
-    example input would be 'add_roman.py IV V'. The output would be 'IX'.")
+    the substractive Roman style (e.g. 4 is expressed IV instead of IIII).\
+    Numbers larger than 3999 are forced to use the additive syntax for\
+    thousands, e.g. MMMMMX for 5010. An example input would be\
+    'add_roman.py IV V'. The output would be 'IX'.")
     parser.add_argument("numeral_a", help="First Roman numeral to be added")
     parser.add_argument("numeral_b", help="Second Roman numeral to be added")
 

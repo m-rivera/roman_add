@@ -8,7 +8,7 @@ new Roman numeral.
 ## Compatibility
 
 This program is tested and compatible with Python 2.7, and Python 3.0-3.6.
-There are no external library requirements except for testing. Users intersted
+There are no external library requirements except for testing. Users interested
 in this should refer to the ['For Developers' section](#for-developers).
 
 ## Installation
@@ -41,8 +41,11 @@ Would return
 add_roman.py IX
 ```
 
-The input numbers need to be positive, in all capitals, and in the subtractive
-Roman style (e.g. 4 is expressed as IV instead of IIII).
+**IMPORTANT**: The numbers must be positive, in all capitals, and in the
+substractive Roman style (e.g. 4 is expressed IV instead of IIII). Numbers
+larger than 3999 are forced to use the additive syntax for thousands,
+e.g. MMMMMX for 5010.
+
 This information can be accessed with:
 
 ```bash
