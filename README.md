@@ -5,11 +5,15 @@
 This program takes two Roman numerals as arguments and returns their sum as a
 new Roman numeral.
 
-## Compatibility
+## Dependency and Compatibility
 
+This program requires:
+
+-   **pip** (to handle the installation)
+-   **pytest** (only for testing)
 This program is tested and compatible with Python 2.7, and Python 3.0-3.6.
-There are no external library requirements except for testing. Users interested
-in this should refer to the ['For Developers' section](#for-developers).
+Users interested in testing should refer to the
+['For Developers' section](#for-developers).
 
 ## Installation
 
