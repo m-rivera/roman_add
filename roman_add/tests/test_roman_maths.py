@@ -1,4 +1,4 @@
-"""Unit tests for converting between Toman and Arabic numerals."""
+"""Unit tests for converting between Roman and Arabic numerals."""
 import pytest
 import subprocess
 import roman_add.src.roman_maths as rm
